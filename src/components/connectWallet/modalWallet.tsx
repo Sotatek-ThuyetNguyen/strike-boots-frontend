@@ -4,6 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle, { DialogTitleProps } from '@mui/material/DialogTitle';
 import { Box, BoxProps, Button, styled } from '@mui/material';
 import metamask from 'assets/images/metamask.svg';
+import closeIcon from 'assets/images/close-icon.svg';
 import walletConnect from 'assets/images/walletconnect.svg';
 import useAuth from 'hook/useAuth';
 import { useWeb3React } from '@web3-react/core';
@@ -36,6 +37,11 @@ const STitle = styleds.div`
   line-height: 32px;
   letter-spacing: -0.75px;
   color: #333;
+
+`;
+const SClose = styleds.div`
+  cursor:pointer;
+  padding: 36px 32px;
 
 `;
 const SWarning = styleds.div`
@@ -95,28 +101,6 @@ const BlockButtonWalletWrapper = styled(Box)<BoxProps>(({}) => ({
   padding: '0 32px',
 }));
 
-const NoteWalletProvider = styled(Box)<BoxProps>(({ theme }) => ({
-  padding: '0 32px',
-  marginBottom: '15px',
-
-  h3: {
-    fontWeight: '700',
-    fontSize: '20px',
-    lineHeight: '32px',
-    letterSpacing: '-0.5px',
-    color: theme.palette.primary.light,
-  },
-
-  p: {
-    fontStyle: 'normal',
-    fontWeight: '400',
-    fontSize: '14px',
-    lineHeight: '16px',
-    color: theme.palette.primary.contrastText,
-    margin: '8px 0',
-  },
-}));
-
 const ModalWallet: React.FC<Props> = ({ children, open, onClickClose }: Props) => {
   const { login } = useAuth();
   const { account } = useWeb3React<Web3>();
@@ -126,16 +110,16 @@ const ModalWallet: React.FC<Props> = ({ children, open, onClickClose }: Props) =
       Cookies.set('address', account);
     }
   }, [account]);
+
   return (
     <DialogWallet open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
       <SDialog>
         {children}
         <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
           <STitle> {t(`Connect to a wallet`)}</STitle>
-          <STitle onClick={onClickClose}>Close</STitle>
-        </Box>
-        <Box sx={{ textAlign: 'center', marginBottom: '32px' }}>
-          <SWarning>Please connect your wallet to Ekta Mainnet</SWarning>
+          <SClose onClick={onClickClose}>
+            <img src={closeIcon} alt="" />
+          </SClose>
         </Box>
         <BlockButtonWalletWrapper>
           <SBtnWallet
