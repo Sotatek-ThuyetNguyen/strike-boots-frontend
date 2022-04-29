@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'DM Sans' !important;
+}
+a {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+.apexcharts-toolbar {
+  display: none !important;
+}
+iframe {
+  position: relative !important;
+  display: none !important;
+}
+.MuiDialog-paperFullWidth {
+  padding: 1.5rem;
+  background: #1b1938 !important;
+  border-radius: 5px;
+  width: 65vw !important;
+  max-width: 420px !important;
+  background: #131421 !important;
+  border-radius: 10px !important;
+}
+
+.MuiDialog-paper {
+  background: #23262f !important;
+}
+
+.MuiDialog-paper {
+  margin: 32px;
+  position: relative;
+  overflow-y: hidden;
+}
+.errorPU .MuiDialog-paper {
+  width: 600px;
+}
+.errorPU-2 .MuiDialog-paper {
+  width: 600px;
+  border-radius: 20px;
+}
+.trade-dialog .MuiDialog-paper {
+  width: 600px;
+}
+
+.MuiTooltip-popper {
+  color: '#bfbfbf';
+}
+.active-time {
+  background: #353945;
+  border-radius: 50px;
+  padding: 8px 16px !important;
+  font-size: 14px;
+}
+.active-mode {
+  background: #479bff !important;
+  color: #fcfcfd !important;
+  border-radius: 90px !important;
+  border: none !important;
+}
+.active-time {
+  color: #fff !important;
+}
+* {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+.css-1h4jsst-MuiSpeedDial-root .MuiSpeedDial-actions {
+  display: none;
+}
